@@ -1,0 +1,15 @@
+[Unit]
+Description=ComfyUI Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ComfyUI
+Environment=PATH=/home/ubuntu/ComfyUI/venv/bin
+ExecStart=/home/ubuntu/ComfyUI/venv/bin/python main.py --listen 0.0.0.0 --port 8188 --enable-cors-header --cpu
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 
