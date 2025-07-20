@@ -159,11 +159,16 @@ df -h
 
 ## Файлы проекта
 
-- `blackholetest.pem` - SSH ключ для подключения к серверу
+- `blackholetest.pem` - SSH ключ для подключения к сервера
 - `start_comfyui.sh` - Скрипт для ручного запуска ComfyUI
 - `comfyui.service` - Systemd сервис файл
 - `comfyui_manager.sh` - Скрипт управления ComfyUI
 - `health_check.sh` - Скрипт комплексной проверки состояния системы
+- `openai_image_generator.py` - Основной скрипт для работы с OpenAI API
+- `comfyui_openai_node.py` - Кастомный узел ComfyUI для OpenAI
+- `install_openai_node_server.sh` - Скрипт установки OpenAI узла на сервере
+- `install_openai_node.py` - Скрипт установки OpenAI узла локально
+- `example_openai_workflow.json` - Пример workflow для ComfyUI с OpenAI
 - `README.md` - Документация проекта
 
 ## Быстрый старт
@@ -182,3 +187,70 @@ df -h
    ```
    http://34.245.10.81:8188
    ```
+
+## OpenAI Интеграция
+
+Проект включает кастомные узлы для генерации изображений через OpenAI API.
+
+### Установленные узлы
+
+- **OpenAI Image Generator** - Генерация изображений через DALL-E 2/3
+- **OpenAI Image Variation** - Создание вариаций существующих изображений
+
+### Использование OpenAI узлов
+
+1. **Установите OpenAI API ключ:**
+   ```bash
+   export OPENAI_API_KEY="your-api-key-here"
+   ```
+
+2. **В ComfyUI найдите узлы в категории "OpenAI"**
+
+3. **Настройте параметры:**
+   - **prompt**: Описание изображения
+   - **model**: dall-e-2 или dall-e-3
+   - **size**: Размер изображения
+   - **quality**: standard или hd (только для DALL-E 3)
+   - **style**: vivid или natural (только для DALL-E 3)
+
+### Примеры использования
+
+**Генерация пейзажа:**
+```
+prompt: "A beautiful sunset over mountains, digital art style"
+model: dall-e-3
+size: 1024x1024
+quality: standard
+style: vivid
+```
+
+**Генерация портрета:**
+```
+prompt: "A professional portrait of a woman, studio lighting"
+model: dall-e-3
+size: 1024x1024
+quality: hd
+style: natural
+```
+
+### Установка узлов
+
+Узлы уже установлены на сервере. Для переустановки используйте:
+```bash
+./install_openai_node_server.sh
+```
+
+### Пример Workflow
+
+В файле `example_openai_workflow.json` содержится пример workflow, который демонстрирует:
+1. Генерацию изображения через OpenAI
+2. Сохранение результата
+3. Предварительный просмотр
+4. Создание вариации изображения
+
+Для загрузки workflow в ComfyUI:
+1. Откройте ComfyUI: http://34.245.10.81:8188
+2. Нажмите "Load" в правом верхнем углу
+3. Выберите файл `example_openai_workflow.json`
+4. Установите ваш OpenAI API ключ в узле
+5. Нажмите "Queue Prompt" для запуска генерации
