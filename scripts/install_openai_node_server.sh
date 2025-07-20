@@ -48,11 +48,11 @@ echo -e "${GREEN}✓ Директория создана${NC}"
 echo -e "${YELLOW}5. Копирование файлов на сервер...${NC}"
 
 # Копируем основной скрипт генератора
-scp -i blackholetest.pem openai_image_generator.py ubuntu@${SERVER_IP}:${COMFYUI_PATH}/custom_nodes/openai_image_generator/
+scp -i blackholetest.pem examples/openai_image_generator.py ubuntu@${SERVER_IP}:${COMFYUI_PATH}/custom_nodes/openai_image_generator/
 echo -e "${GREEN}✓ openai_image_generator.py скопирован${NC}"
 
 # Копируем узел ComfyUI
-scp -i blackholetest.pem comfyui_openai_node.py ubuntu@${SERVER_IP}:${COMFYUI_PATH}/custom_nodes/openai_image_generator/
+scp -i blackholetest.pem examples/comfyui_openai_node.py ubuntu@${SERVER_IP}:${COMFYUI_PATH}/custom_nodes/openai_image_generator/
 echo -e "${GREEN}✓ comfyui_openai_node.py скопирован${NC}"
 
 # Создание __init__.py файла

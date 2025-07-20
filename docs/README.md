@@ -8,6 +8,7 @@
 - [Установка ComfyUI на сервере](./01_comfyui_server_setup.md) - Полное руководство по развертыванию
 - [Создание кастомных скриптов OpenAI](./02_openai_custom_scripts.md) - Разработка и интеграция
 - [Использование веб-интерфейса](./03_comfyui_web_interface.md) - Работа с UI и workflows
+- [Настройка OpenAI API ключа](./04_openai_api_setup.md) - Конфигурация и безопасность
 
 ## 🎯 Для кого эта документация
 
@@ -75,25 +76,36 @@ curl -I http://your-server-ip:8188
 
 ```
 confiuitest/
-├── docs/                           # 📚 Эта документация
-│   ├── README.md                   # Главный файл
-│   ├── 01_comfyui_server_setup.md  # Установка на сервере
-│   ├── 02_openai_custom_scripts.md # Кастомные скрипты
-│   └── 03_comfyui_web_interface.md # Веб-интерфейс
-├── openai_image_generator.py       # Основной класс OpenAI
-├── comfyui_openai_node.py          # Кастомные узлы ComfyUI
-├── install_openai_node_server.sh   # Скрипт установки на сервере
-├── example_openai_workflow.json    # Пример workflow
-├── comfyui_manager.sh              # Управление ComfyUI
-├── health_check.sh                 # Проверка состояния
-└── README.md                       # Основная документация проекта
+├── 📚 docs/                           # Эта документация
+│   ├── README.md                      # Главный файл
+│   ├── 01_comfyui_server_setup.md     # Установка на сервере
+│   ├── 02_openai_custom_scripts.md    # Кастомные скрипты
+│   ├── 03_comfyui_web_interface.md    # Веб-интерфейс
+│   └── examples/
+│       └── basic_workflows.md         # Примеры workflows
+├── 🔧 scripts/                        # Скрипты управления
+│   ├── start_comfyui.sh               # Ручной запуск ComfyUI
+│   ├── comfyui_manager.sh             # Управление ComfyUI
+│   ├── health_check.sh                # Проверка состояния
+│   └── install_openai_node_server.sh  # Установка OpenAI узла
+├── ⚙️ config/                         # Конфигурационные файлы
+│   └── comfyui.service                # Systemd сервис файл
+├── 📋 workflows/                      # Примеры workflows
+│   └── example_openai_workflow.json   # Пример workflow с OpenAI
+├── 💡 examples/                       # Примеры кода
+│   ├── openai_image_generator.py      # Основной класс OpenAI
+│   ├── comfyui_openai_node.py         # Кастомные узлы ComfyUI
+│   └── install_openai_node.py         # Локальная установка
+├── 🔑 blackholetest.pem               # SSH ключ для сервера
+├── 📖 README.md                       # Основная документация
+└── 🚫 .gitignore                      # Исключения Git
 ```
 
 ## 🎨 Примеры использования
 
 ### Простая генерация изображения
 ```python
-from openai_image_generator import OpenAIImageGenerator
+from examples.openai_image_generator import OpenAIImageGenerator
 
 generator = OpenAIImageGenerator(api_key="your-key")
 result = generator.generate_image(
