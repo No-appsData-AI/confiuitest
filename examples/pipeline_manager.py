@@ -11,7 +11,7 @@ import os
 import json
 import argparse
 from typing import Dict, List, Optional, Any
-from comfyui_pipeline_builder import ComfyUIPipelineBuilder, PipelineTemplates
+from .comfyui_pipeline_builder import ComfyUIPipelineBuilder, PipelineTemplates
 import logging
 
 # Настройка логирования

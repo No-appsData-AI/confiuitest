@@ -1,0 +1,89 @@
+{
+  "last_node_id": 3,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "OpenAIImageGenerator",
+      "pos": [
+        100,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": {
+        "prompt": "A steampunk airship flying over Victorian London",
+        "api_key": "",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "standard",
+        "style": "vivid"
+      },
+      "title": "OpenAI Generator",
+      "description": "Генерация: A steampunk airship flying over Victorian London..."
+    },
+    {
+      "id": 2,
+      "type": "S3ImageUploader",
+      "pos": [
+        450,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 250
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": {
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1",
+        "metadata": "{\"prompt\": \"A steampunk airship flying over Victorian London\", \"source\": \"openai\"}"
+      },
+      "title": "S3 Uploader",
+      "description": "Загрузка в S3"
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        800,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": {},
+      "title": "Preview",
+      "description": "Предварительный просмотр"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0
+    ]
+  ]
+}

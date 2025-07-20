@@ -1,0 +1,57 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "S3ImageDownloader",
+      "pos": [
+        100,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": {
+        "s3_key": "comfyui/images/cyberpunk_street.png",
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1"
+      },
+      "title": "S3 Downloader",
+      "description": "Скачивание изображения из S3"
+    },
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": [
+        450,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": {},
+      "title": "Image Preview",
+      "description": "Предварительный просмотр изображения"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0
+    ]
+  ]
+}

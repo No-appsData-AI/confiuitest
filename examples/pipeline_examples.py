@@ -9,8 +9,8 @@
 
 import json
 import os
-from comfyui_pipeline_builder import ComfyUIPipelineBuilder, PipelineTemplates
-from pipeline_manager import PipelineManager
+from .comfyui_pipeline_builder import ComfyUIPipelineBuilder, PipelineTemplates
+from .pipeline_manager import PipelineManager
 
 
 def example_simple_openai_pipeline():

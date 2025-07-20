@@ -1,0 +1,113 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "S3ImageLister",
+      "pos": [
+        100,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": {
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1",
+        "prefix": "comfyui/images/",
+        "max_keys": 10
+      },
+      "title": "Image Lister",
+      "description": "Получение списка изображений"
+    },
+    {
+      "id": 2,
+      "type": "S3ImageDownloader",
+      "pos": [
+        450,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": {
+        "s3_key": "comfyui/images/20241201_120000_image.png",
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1"
+      },
+      "title": "Image Downloader",
+      "description": "Скачивание изображения"
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        800,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": {},
+      "title": "Preview",
+      "description": "Предварительный просмотр"
+    },
+    {
+      "id": 4,
+      "type": "S3ImageUploader",
+      "pos": [
+        100,
+        350
+      ],
+      "size": {
+        "0": 300,
+        "1": 250
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": {
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1",
+        "metadata": "{\"processed\": true, \"batch\": \"example\"}"
+      },
+      "title": "Processed Uploader",
+      "description": "Загрузка обработанного изображения"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      4,
+      0
+    ]
+  ]
+}

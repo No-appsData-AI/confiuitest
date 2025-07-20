@@ -1,0 +1,58 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "OpenAIImageGenerator",
+      "pos": [
+        100,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": {
+        "prompt": "A magical forest with glowing mushrooms and fairy lights",
+        "api_key": "",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "standard",
+        "style": "vivid"
+      },
+      "title": "OpenAI Generator",
+      "description": "Генерация: A magical forest with glowing mushrooms and fairy ..."
+    },
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": [
+        450,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": {},
+      "title": "Preview",
+      "description": "Предварительный просмотр"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0
+    ]
+  ]
+}

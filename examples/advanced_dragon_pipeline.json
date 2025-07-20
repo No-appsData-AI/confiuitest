@@ -1,0 +1,137 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "OpenAIImageGenerator",
+      "pos": [
+        100,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": {
+        "prompt": "A majestic dragon flying over a medieval castle at sunset",
+        "api_key": "",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "hd",
+        "style": "vivid"
+      },
+      "title": "Dragon Generator",
+      "description": "Генерация дракона над замком"
+    },
+    {
+      "id": 2,
+      "type": "S3ImageUploader",
+      "pos": [
+        450,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 250
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": {
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1",
+        "metadata": "{\"prompt\": \"A majestic dragon flying over a medieval castle at sunset\", \"model\": \"dall-e-3\", \"category\": \"fantasy\", \"quality\": \"hd\"}"
+      },
+      "title": "S3 Uploader",
+      "description": "Загрузка в облачное хранилище"
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        800,
+        100
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": {},
+      "title": "Preview",
+      "description": "Предварительный просмотр"
+    },
+    {
+      "id": 4,
+      "type": "S3StorageInfo",
+      "pos": [
+        100,
+        350
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": {
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1"
+      },
+      "title": "Storage Info",
+      "description": "Информация о хранилище"
+    },
+    {
+      "id": 5,
+      "type": "S3WorkflowSaver",
+      "pos": [
+        450,
+        350
+      ],
+      "size": {
+        "0": 300,
+        "1": 200
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": {
+        "workflow_data": "{\"name\": \"Dragon Castle Workflow\", \"version\": \"1.0.0\", \"description\": \"\\u041f\\u0430\\u0439\\u043f\\u043b\\u0430\\u0439\\u043d \\u0434\\u043b\\u044f \\u0433\\u0435\\u043d\\u0435\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0434\\u0440\\u0430\\u043a\\u043e\\u043d\\u0430 \\u043d\\u0430\\u0434 \\u0437\\u0430\\u043c\\u043a\\u043e\\u043c\", \"author\": \"AI Assistant\", \"created_at\": \"2024-12-01T12:00:00Z\"}",
+        "bucket_name": "comfyui-images",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "region_name": "us-east-1",
+        "workflow_name": "dragon_castle_workflow.json"
+      },
+      "title": "Workflow Saver",
+      "description": "Сохранение workflow"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0
+    ]
+  ]
+}
