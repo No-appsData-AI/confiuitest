@@ -193,17 +193,21 @@ confiuitest/
 - `comfyui_manager.sh` - Скрипт управления ComfyUI (старт/стоп/статус)
 - `health_check.sh` - Скрипт комплексной проверки состояния системы
 - `install_openai_node_server.sh` - Скрипт установки OpenAI узла на сервере
+- `install_s3_nodes_server.sh` - Скрипт установки S3 узлов на сервере
 
 #### ⚙️ Конфигурация (`config/`)
 - `comfyui.service` - Systemd сервис файл для автозапуска ComfyUI
 
 #### 📋 Workflows (`workflows/`)
 - `example_openai_workflow.json` - Пример workflow для ComfyUI с OpenAI
+- `s3_integration_workflow.json` - Пример workflow с интеграцией S3
 
 #### 💡 Примеры кода (`examples/`)
 - `openai_image_generator.py` - Основной скрипт для работы с OpenAI API
 - `comfyui_openai_node.py` - Кастомный узел ComfyUI для OpenAI
 - `install_openai_node.py` - Скрипт установки OpenAI узла локально
+- `s3_storage_manager.py` - Менеджер S3 хранилища
+- `comfyui_s3_nodes.py` - Узлы для работы с S3
 
 #### 🔑 Безопасность
 - `blackholetest.pem` - SSH ключ для подключения к серверу (защищен .gitignore)
@@ -284,7 +288,11 @@ style: natural
 
 Узлы уже установлены на сервере. Для переустановки используйте:
 ```bash
+# OpenAI узлы
 ./scripts/install_openai_node_server.sh
+
+# S3 Storage узлы
+./scripts/install_s3_nodes_server.sh
 ```
 
 ### Пример Workflow
